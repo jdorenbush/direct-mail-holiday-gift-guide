@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sanitized portfolio reconstruction of a legacy interactive holiday gift guide.">
+  <title>Holiday Gift Guide — Portfolio Sample</title>
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Portfolio reconstruction</p>
+      <h1>Holiday Gift Guide</h1>
+      <p class="intro">Browse a representative sample catalog, save favorites, and generate a shareable email preview.</p>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Sample catalog</p>
+          <h2 id="catalog-title">Featured products</h2>
+        </div>
+        <p class="muted">Fictional products replace the original client catalog.</p>
+      </div>
+      <div id="catalog" class="product-grid"></div>
+    </section>
+
+    <aside class="favorites" aria-labelledby="favorites-title">
+      <div class="favorites-header">
+        <div>
+          <p class="eyebrow">Your list</p>
+          <h2 id="favorites-title">Favorites <span id="favorite-count" class="count">0</span></h2>
+        </div>
+        <button id="clear-favorites" class="text-button" type="button">Clear</button>
+      </div>
+
+      <div id="favorites-empty" class="empty-state">Add products from the catalog to build a list.</div>
+      <ul id="favorites-list" class="favorites-list" aria-live="polite"></ul>
+
+      <form id="share-form" class="share-form" novalidate>
+        <h3>Create email preview</h3>
+        <label>
+          Your name
+          <input id="sender-name" name="sender" type="text" maxlength="80" autocomplete="name" required>
+        </label>
+        <label>
+          Reply-to email
+          <input id="reply-email" name="reply" type="email" maxlength="254" autocomplete="email" required>
+        </label>
+        <label>
+          Recipient email
+          <input id="recipient-email" name="recipient" type="email" maxlength="254" required>
+        </label>
+        <button class="primary-button" type="submit">Generate preview</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </aside>
+  </main>
+
+  <dialog id="preview-dialog" class="preview-dialog">
+    <div class="dialog-header">
+      <h2>Email preview</h2>
+      <button id="close-preview" class="text-button" type="button">Close</button>
+    </div>
+    <div id="preview-meta" class="preview-meta"></div>
+    <div id="preview-content" class="preview-content"></div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap">Sanitized portfolio sample. No email is transmitted by this demo.</div>
+  </footer>
+</body>
+</html>
